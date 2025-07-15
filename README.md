@@ -4,5 +4,4 @@ A CLI application for getting information about image, images🖼️
 | Demo screen |
 | :---------------------|
 | <img width="400" height="250" src=".github/screen.png"> |
-| :--------------------------|
 | <a href=".github/demo.mp4">Demo video</a> |
