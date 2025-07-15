@@ -20,8 +20,7 @@
 use std::io::*;
 use std::thread;
 use std::time::Duration;
-
-use console::Term;
+use std::process::Command;
 
 use crate::modules::main_mechanics::image_manager::*;
 use crate::modules::app_design_managment::decoration_patterns::*;
@@ -31,8 +30,19 @@ use crate::modules::app_design_managment::progress_bar::*;
 
 //clears screen
 fn clear_screen() {
-    let term = Term::stdout();
-    term.clear_screen().expect("Failed to clear screen!");
+    //checking os with cfg! macros during compilation
+    if cfg!(target_os = "windows") {
+        //for Windows
+        Command::new("cmd")//cls command in windows built-in command cmd.exe, you can't call it as a separate program in Command::new().
+            .args(&["/C", "cls"])
+            .status()
+            .expect("Failed to clear terminal before drawing app screen!");
+    } else {
+        //for UNIX sytems (Linux, macOS)
+        Command::new("clear")
+            .status()
+            .expect("Failed to clear terminal before drawing app screen!");
+    }
 }
 
 //draws main screen
