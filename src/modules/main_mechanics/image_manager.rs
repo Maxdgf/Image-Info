@@ -576,8 +576,9 @@ pub fn get_images_size_with_extension(
                 PathBuf::from("Unknown directory")
             };
 
+            //configuring loading spinner message
             let progress_bar_message = format!(
-                "Scanned dirs ({})/({}) => images found: [{}]\ndir: • {:?} 🔎", 
+                "-|🗂️Scanned dirs ({} ✅)/({}) => images found: [{}🖼️]\n|📂dir: • {:?} 🔎", 
                 scanned_dirs, 
                 all_dirs.len(),
                 images_count,
@@ -647,7 +648,7 @@ pub fn get_images_size_with_extension(
         if images_count > 0 {
             result.push_str(
                 &format!(
-                    "|Found ({}) image files with extension-> |{}| in directories:\n|\n|All size ({})\n|\n|-[{}]->[{} files]->[{}]\n|-[{}]->[{} files]->[{}]\n|-[{}]->[{} files]->[{}]\n|-[{}]->[{} files]->[{}]\n|-[{}]->[{} files]->[{}]\n|-[{}]->[{} files]->[{}]\n|-[{}]->[{} files]->[{}]\n|",
+                    "|Found (≈{}) image files with extension-> |{}| in directories:\n|\n|All size (≈{})\n|\n|-[{}]->[{} files]->[{}]\n|-[{}]->[{} files]->[{}]\n|-[{}]->[{} files]->[{}]\n|-[{}]->[{} files]->[{}]\n|-[{}]->[{} files]->[{}]\n|-[{}]->[{} files]->[{}]\n|-[{}]->[{} files]->[{}]\n|",
                     images_count,
                     
                     font_and_style(
