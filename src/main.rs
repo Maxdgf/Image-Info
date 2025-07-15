@@ -16,8 +16,6 @@ use std::io::stdin;
 use modules::app_design_managment::screens_manager::*;
 use modules::main_mechanics::command_parser::parse_command;
 
-//gii=(C:\Users\maxon\Downloads\photo_2025-07-09_22-14-41.jpeg
-
 fn main() {
     draw_main_screen(); //draws main screen
 
